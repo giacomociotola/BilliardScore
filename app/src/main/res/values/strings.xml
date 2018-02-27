@@ -17,6 +17,7 @@
     <string name="yellow_on_white">Yellow ball on white ball</string>
     <string name="yellow_on_red">Yellow ball on red ball</string>
     <string name="yellow_on_white_on_red">Yellow ball on white ball on red ball</string>
+    <string name="on_pins">On pins</string>
 
     <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
     <string name="settings_menu_item" translatable="false">Settings</string>

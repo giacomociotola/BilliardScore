@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox yellowOnWhite;
     private CheckBox yellowOnRed;
     private CheckBox yellowOnWhiteOnRed;
+    private CheckBox whiteOnPins;
+    private CheckBox yellowOnPins;
     private CheckBox white_pin[];
     int whitePinsFalled = 0;
     private CheckBox red_pin;
@@ -90,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
         yellowOnWhiteOnRed.setChecked(false);
         yellowOnWhiteOnRed.setOnClickListener(yellowOnWhiteOnRedListener);
 
+        whiteOnPins = findViewById(R.id.white_on_pins);
+        whiteOnPins.setChecked(false);
+
+        yellowOnPins = findViewById(R.id.yellow_on_pins);
+        yellowOnPins.setChecked(false);
 
         white_pin = new CheckBox[4];
         white_pin[0] = findViewById(R.id.white_pin0);
@@ -267,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void checkPoints() {
         if (player1points >= pointsPerSet) {
-            player1_setsWon +=1;
+            player1_setsWon += 1;
             if (player1_setsWon >= ((setNumberLimit + 1) / 2)) {
                 showMessageMatchWon();
             } else {
@@ -278,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             display();
             newSetTurn();
         } else if (player2points >= pointsPerSet) {
-            player2_setsWon +=1;
+            player2_setsWon += 1;
             if (player2_setsWon >= ((setNumberLimit + 1) / 2)) {
                 showMessageMatchWon();
             } else {
@@ -295,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
     Set start turn for every new set. First set is started by white ball. Then, the turn is alternate
      */
     public void newSetTurn() {
-        for (int i=1;i<setNumberLimit;i=i+2) {
+        for (int i = 1; i < setNumberLimit; i = i + 2) {
             if (setNumber == i) {
                 player1_turn.setChecked(true);
                 player2_turn.setChecked(false);
@@ -372,27 +379,36 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // add points for each white pin falled
             if (whiteOnYellow.isChecked()) {
+                int points = 0;
+
                 if (whitePinsFalled != 0) {
-                    player1points += 2 * whitePinsFalled;
+                    points += 2 * whitePinsFalled;
                 }
 
                 // points for red pin falled alone or with white ones
                 if (red_pin.isChecked() && whitePinsFalled == 0) {
-                    player1points += 10;
+                    points += 10;
                 } else if (red_pin.isChecked() && whitePinsFalled != 0) {
-                    player1points += 4;
+                    points += 4;
                 }
 
                 // add points when the white ball touches the red one after it touched the yellow one
                 if (whiteOnRed.isChecked()) {
-                    player1points += 4;
+                    points += 4;
                 } else {
                     // add points when the yellow ball, touched by the white one, touches the red one
                     if (whiteOnYellowOnRed.isChecked()) {
-                        player1points += 3;
+                        points += 3;
                     }
+
                 }
 
+                // if white ball strikes pins, all the points are loss and gained by the opponent player
+                if (whiteOnPins.isChecked()) {
+                    player2points += points;
+                } else {
+                    player1points += points;
+                }
 
             } else {
                 // fault points
@@ -475,26 +491,35 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             if (yellowOnWhite.isChecked()) {
+                int points = 0;
+
                 // points for red pin falled alone or with white ones
                 if (red_pin.isChecked() && whitePinsFalled == 0) {
-                    player2points += 10;
+                    points += 10;
                 } else if (red_pin.isChecked() && whitePinsFalled != 0) {
-                    player2points += 4;
+                    points += 4;
                 }
 
                 // add points for each white pin falled
                 if (whitePinsFalled != 0) {
-                    player2points += 2 * whitePinsFalled;
+                    points += 2 * whitePinsFalled;
                 }
 
                 // points for touching red ball after have touched white one
                 if (yellowOnRed.isChecked()) {
-                    player2points += 4;
+                    points += 4;
                 } else {
                     // points for whitw ball, touched from yellow one, touching red ball
                     if (yellowOnWhiteOnRed.isChecked()) {
-                        player2points += 3;
+                        points += 3;
                     }
+                }
+
+                // if yellow ball strikes pins, all the points are loss and gained by the opponent player
+                if (yellowOnPins.isChecked()) {
+                    player1points += points;
+                } else {
+                    player2points += points;
                 }
 
             } else {
@@ -533,19 +558,23 @@ public class MainActivity extends AppCompatActivity {
             whiteOnYellow.setVisibility(View.VISIBLE);
             whiteOnRed.setVisibility(View.VISIBLE);
             whiteOnYellowOnRed.setVisibility(View.INVISIBLE);
+            whiteOnPins.setVisibility(View.VISIBLE);
             player2shot.setVisibility(View.INVISIBLE);
             yellowOnWhite.setVisibility(View.INVISIBLE);
             yellowOnRed.setVisibility(View.INVISIBLE);
             yellowOnWhiteOnRed.setVisibility(View.INVISIBLE);
+            yellowOnPins.setVisibility(View.INVISIBLE);
         } else if (player2_turn.isChecked()) {
             player2shot.setVisibility(View.VISIBLE);
             yellowOnWhite.setVisibility(View.VISIBLE);
             yellowOnRed.setVisibility(View.VISIBLE);
             yellowOnWhiteOnRed.setVisibility(View.INVISIBLE);
+            yellowOnPins.setVisibility(View.VISIBLE);
             player1shot.setVisibility(View.INVISIBLE);
             whiteOnYellow.setVisibility(View.INVISIBLE);
             whiteOnRed.setVisibility(View.INVISIBLE);
             whiteOnYellowOnRed.setVisibility(View.INVISIBLE);
+            whiteOnPins.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -561,9 +590,11 @@ public class MainActivity extends AppCompatActivity {
         whiteOnRed.setChecked(false);
         whiteOnYellow.setChecked(false);
         whiteOnYellowOnRed.setChecked(false);
+        whiteOnPins.setChecked(false);
         yellowOnWhite.setChecked(false);
         yellowOnRed.setChecked(false);
         yellowOnWhiteOnRed.setChecked(false);
+        yellowOnPins.setChecked(false);
     }
 
     /*
@@ -658,7 +689,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void showMessageMatchWon() {
         if (player1_setsWon >= ((setNumberLimit + 1) / 2)) {
-            String message =  pl1.getText().toString() + getString(R.string.won_set_n) + setNumber + ".\n";
+            String message = pl1.getText().toString() + getString(R.string.won_set_n) + setNumber + ".\n";
             message = message + pl1.getText().toString() + getString(R.string.won_match);
             message = message + getString(R.string.play_another_match);
 
@@ -682,7 +713,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (player2_setsWon >= ((setNumberLimit + 1) / 2)) {
-            String message =  pl2.getText().toString() + getString(R.string.won_set_n) + setNumber + ".\n";
+            String message = pl2.getText().toString() + getString(R.string.won_set_n) + setNumber + ".\n";
             message = message + pl2.getText().toString() + getString(R.string.won_match);
             message = message + getString(R.string.play_another_match);
 
