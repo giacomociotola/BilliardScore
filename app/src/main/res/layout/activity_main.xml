@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:menu="Menu">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_margin">
+
+        <LinearLayout
+            android:id="@+id/under_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/player1_sets_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:hint="@string/hint"
+                android:textAppearance="@style/FontStyle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="@string/sets_won"
+                android:textAppearance="@style/FontStyle" />
+
+            <TextView
+                android:id="@+id/player2_sets_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:hint="@string/hint"
+                android:textAppearance="@style/FontStyle" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/under_top">
+
+            <LinearLayout
+                android:id="@+id/left_column"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/white_ball"
+                    android:id="@+id/white_ball"
+                    android:layout_width="@dimen/ball_width"
+                    android:layout_height="@dimen/ball_height"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/white_ball" />
+
+                <TextView
+                    android:id="@+id/player1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="@string/settings_player_1_name_default"
+                    android:textAppearance="@style/FontStyle" />
+
+                <TextView
+                    android:id="@+id/player1_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:layout_marginLeft="@dimen/text_margin"
+                    android:layout_marginRight="@dimen/text_margin"
+                    android:hint="@string/hint"
+                    android:textSize="@dimen/points_font_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/white_on_yellow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:contentDescription="@string/white_on_yellow"
+                        android:layout_width="@dimen/two_ball_width"
+                        android:layout_height="@dimen/two_ball_height"
+                        android:src="@drawable/white_on_yellow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/white_on_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:contentDescription="@string/white_on_red"
+                        android:layout_width="@dimen/two_ball_width"
+                        android:layout_height="@dimen/two_ball_height"
+                        android:src="@drawable/white_on_red" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/white_on_yellow_on_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:contentDescription="@string/white_on_yellow_on_red"
+                        android:layout_width="@dimen/two_ball_width"
+                        android:layout_height="@dimen/two_ball_height"
+                        android:src="@drawable/yellow_on_red" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/add_button_player_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/center_column"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/right_column"
+                android:layout_toStartOf="@id/right_column"
+                android:layout_toRightOf="@id/left_column"
+                android:layout_toEndOf="@id/left_column"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rules" />
+
+                <LinearLayout
+                    android:id="@+id/under_rules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/player1_turn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/FontStyle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/turn"
+                        android:textAppearance="@style/FontStyle" />
+
+                    <RadioButton
+                        android:id="@+id/player2_turn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/FontStyle" />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/white_pin0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:button="@drawable/white_pin_checkbox"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/white_pin1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="20dp"
+                        android:button="@drawable/white_pin_checkbox"/>
+
+                    <CheckBox
+                        android:id="@+id/red_pin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:button="@drawable/red_pin_checkbox"/>
+
+                    <CheckBox
+                        android:id="@+id/white_pin2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="20dp"
+                        android:button="@drawable/white_pin_checkbox"/>
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/white_pin3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/white_pin_checkbox"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textAppearance="@style/FontStyle"
+                    android:gravity="center_horizontal"
+                    android:text="@string/shot"/>
+
+                <TextView
+                    android:id="@+id/shot_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textAppearance="@style/FontStyle"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/hint1"/>
+
+                <Button
+                    android:id="@+id/matchReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:text="@string/reset" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/right_column"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:contentDescription="@string/yellow_ball"
+                    android:id="@+id/yellow_ball"
+                    android:layout_width="@dimen/ball_width"
+                    android:layout_height="@dimen/ball_height"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/yellow_ball" />
+
+                <TextView
+                    android:id="@+id/player2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="@string/settings_player_2_name_default"
+                    android:textAppearance="@style/FontStyle" />
+
+                <TextView
+                    android:id="@+id/player2_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:layout_marginLeft="@dimen/text_margin"
+                    android:layout_marginRight="@dimen/text_margin"
+                    android:hint="@string/hint"
+                    android:textSize="@dimen/points_font_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/yellow_on_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:contentDescription="@string/yellow_on_white"
+                        android:layout_width="@dimen/two_ball_width"
+                        android:layout_height="@dimen/two_ball_height"
+                        android:src="@drawable/yellow_on_white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/yellow_on_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:contentDescription="@string/yellow_on_red"
+                        android:layout_width="@dimen/two_ball_width"
+                        android:layout_height="@dimen/two_ball_height"
+                        android:src="@drawable/yellow_on_red" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/yellow_on_white_on_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:contentDescription="@string/yellow_on_white_on_red"
+                        android:layout_width="@dimen/two_ball_width"
+                        android:layout_height="@dimen/two_ball_height"
+                        android:src="@drawable/white_on_red" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/add_button_player_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:text="@string/add" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

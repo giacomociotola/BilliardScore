@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name" translatable="false">Billiard Score</string>
+
+    <string name="sets_won">Sets won</string>
+    <string name="rules">Rules</string>
+    <string name="turn">Turn</string>
+    <string name="add">Add</string>
+    <string name="reset">Match Reset</string>
+    <string name="shot">Shot n.</string>
+    <string name="hint" translatable="false">0</string>
+    <string name="hint1" translatable="false">1</string>
+    <string name="white_ball">White ball</string>
+    <string name="yellow_ball">Yellow ball</string>
+    <string name="white_on_yellow">White ball on yellow ball</string>
+    <string name="white_on_red">White ball on red ball</string>
+    <string name="white_on_yellow_on_red">White ball on yellow ball on red ball</string>
+    <string name="yellow_on_white">Yellow ball on white ball</string>
+    <string name="yellow_on_red">Yellow ball on red ball</string>
+    <string name="yellow_on_white_on_red">Yellow ball on white ball on red ball</string>
+
+    <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item" translatable="false">Settings</string>
+
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="settings_title" translatable="false">Billiard Score Settings</string>
+
+    <!-- Strings For Player 1 name [CHAR LIMIT=30] -->
+    <string name="settings_player_1_name_label">Enter Player 1 name</string>
+    <string name="settings_player_1_name_key" translatable="false">player_1_name</string>
+    <string name="settings_player_1_name_default" translatable="false">Player 1</string>
+
+    <!-- Strings For Player 2 name [CHAR LIMIT=30] -->
+    <string name="settings_player_2_name_label">Enter Player 2 name</string>
+    <string name="settings_player_2_name_key" translatable="false">player_2_name</string>
+    <string name="settings_player_2_name_default" translatable="false">Player 2</string>
+
+    <!-- Strings For point per set [CHAR LIMIT=30] -->
+    <string name="settings_points_per_set_label">Enter Points per set</string>
+    <string name="settings_points_per_set_key" translatable="false">points_per_set</string>
+    <string name="settings_points_per_set_default" translatable="false">60</string>
+
+    <!-- Strings For Set Number [CHAR LIMIT=30] -->
+    <string name="settings_set_number_label">Enter Set number</string>
+    <string name="settings_set_number_key" translatable="false">set_number</string>
+    <string name="settings_set_number_default" translatable="false">5</string>
+
+    <string name="warning">Warning</string>
+    <string name="match_reset_message">Are you sure you want to reset the match?</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="canc">Cancel</string>
+    <string name="won_set_n"> won Set n. </string>
+
+    <string name="set_won">Set won</string>
+    <string name="won_match"> won Match.\n</string>
+    <string name="play_another_match">Do you want to play another match?</string>
+    <string name="match_won">Match won</string>
+    <string name="rules_url" translatable="false">http://www.fibis.it/media/pages/62/attach/regolamento_gioco_5birilli_goriziana_operativo_dal_1_settembre_2017(v2).pdf</string>
+
+</resources>

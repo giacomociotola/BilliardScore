@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sets_won">Set vinti</string>
+    <string name="rules">Regole</string>
+    <string name="turn">Turno</string>
+    <string name="add">Calcola</string>
+    <string name="reset">Ricomincia</string>
+    <string name="shot">Tiro n.</string>
+    <string name="white_ball">Bianca</string>
+    <string name="yellow_ball">Gialla</string>
+    <string name="white_on_yellow">Bianca su gialla</string>
+    <string name="white_on_red">Bianca su rossa</string>
+    <string name="white_on_yellow_on_red">Bianca su gialla su rossa</string>
+    <string name="yellow_on_white">Gialla su bianca</string>
+    <string name="yellow_on_red">Gialla su rossa</string>
+    <string name="yellow_on_white_on_red">Gialla su bianca su rossa</string>
+    <string name="settings_player_1_name_label">Inserisci nome giocatore 1</string>
+    <string name="settings_player_2_name_label">Inserisci nome giocatore 2</string>
+    <string name="settings_points_per_set_label">Inserisci i punti per ogni set</string>
+    <string name="settings_set_number_label">Inserisci il numero totale di set (dispari)</string>
+    <string name="warning">Attenzione</string>
+    <string name="match_reset_message">Sei sicuro di vole riavviare il match?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="canc">Annulla</string>
+    <string name="won_set_n">" ha vinto il Set n. "</string>
+    <string name="set_won">Set vinto</string>
+    <string name="won_match">" ha vinto il Match. "</string>
+    <string name="play_another_match">Vuoi giocare un\'altra partita?</string>
+    <string name="match_won">Match vinto</string>
+</resources>

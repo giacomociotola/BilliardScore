@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_player_1_name_default"
+        android:inputType="text"
+        android:key="@string/settings_player_1_name_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_player_1_name_label" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_player_2_name_default"
+        android:inputType="text"
+        android:key="@string/settings_player_2_name_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_player_2_name_label" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_points_per_set_default"
+        android:inputType="number"
+        android:key="@string/settings_points_per_set_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_points_per_set_label" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_set_number_default"
+        android:inputType="number"
+        android:key="@string/settings_set_number_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_set_number_label" />
+</PreferenceScreen>

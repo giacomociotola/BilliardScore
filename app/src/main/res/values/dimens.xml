@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="text_margin">12dp</dimen>
+    <dimen name="ball_width">40dp</dimen>
+    <dimen name="ball_height">42dp</dimen>
+    <dimen name="two_ball_width">60dp</dimen>
+    <dimen name="two_ball_height">30dp</dimen>
+    <dimen name="font_size">14sp</dimen>
+    <dimen name="points_font_size">30sp</dimen>
+
+</resources>
